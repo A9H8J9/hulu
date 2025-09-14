@@ -1,8 +1,3 @@
 {
-  "app": "hulu",
-  "port": 3000,
-  "build": {
-    "location": "iran"
-  },
-  "disks": []
+  "port": 3000
 }
