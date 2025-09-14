@@ -21,10 +21,7 @@ export default function SignIn() {
             return res.data;
         },
         onError: (error) => {
-            toaster.create({
-                type: 'error',
-                description: error.response.data.message,
-            })
+           console.log('error', error)
         },
         onSuccess: (data) => {
             localStorage.setItem('token', data.token)

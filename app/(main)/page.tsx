@@ -6,8 +6,8 @@ import { Carousel } from "@ark-ui/react";
 import Link from "next/link";
 
 export default function Home() {
-  const [movies, setMovies] = useState({});
-  const [genres, setGenres] = useState([]);
+  const [movies, setMovies] = useState<any>({});
+  const [genres, setGenres] = useState<any>([]);
 
   const genreTranslations = {
     action: "اکشن",
@@ -77,7 +77,7 @@ export default function Home() {
 
           {genreName === "all" ? (
             <SimpleGrid mt={4} columns={[1, null, 4]} px={4} gap={2}>
-              {list.slice(0, 4).map((x, i) => (
+              {Array.isArray(list) && list.slice(0, 4).map((x, i) => (
                 <Box className="group" w="350px" h={200} key={i}>
                   <VStack
                     pt={20}
@@ -106,7 +106,7 @@ export default function Home() {
             </SimpleGrid>
           ) : (
             <SimpleGrid columns={[2, null, 7]} gap={3} px={4} md={{ mt: 4 }} mt={0}>
-              {list.slice(0, 7).map((x, i) => (
+              {Array.isArray(list) && list.slice(0, 7).map((x, i) => (
                 <Link href={`/${x.type}/${x.id}`} key={i}>
                   <Box className="group" md={{ w: "200px", h: 280, mt: 0 }} mt={6} w={180} h={240}>
                     <VStack

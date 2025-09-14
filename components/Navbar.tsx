@@ -1,6 +1,6 @@
 'use client'
 
-import { Accordion, Avatar, Box, Button, CloseButton, Drawer, HoverCard, HStack, Portal, SimpleGrid, Span, Spinner, Text, useBreakpointValue, VStack } from "@chakra-ui/react"
+import { Avatar, Box, Button, CloseButton, Drawer, HoverCard, HStack, Portal, SimpleGrid, Span, Spinner, Text, useBreakpointValue, VStack } from "@chakra-ui/react"
 import { CiSearch } from "react-icons/ci";
 import { axiosClient } from "../lib/axios";
 import { IoExit } from "react-icons/io5";
@@ -43,13 +43,6 @@ export default function Navbar() {
     const handleClick = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
-    const items = [
-        {
-            value: "b",
-            title: "سریال",
-            titles: ["First 1", "First 2", "First 3", "First 4", "First 5"],
-        },
-    ]
     return (
         <>
             {isDesktop && (
@@ -303,19 +296,7 @@ export default function Navbar() {
                                                 <Drawer.Title>hulu</Drawer.Title>
                                             </Drawer.Header>
                                             <Drawer.Body dir="rtl">
-                                                <Accordion.Root collapsible>
-                                                    {items.map((item, index) => (
-                                                        <Accordion.Item key={index} value={item.value}>
-                                                            <Accordion.ItemTrigger>
-                                                                <Span flex="1">{item.title}</Span>
-                                                                <Accordion.ItemIndicator />
-                                                            </Accordion.ItemTrigger>
-                                                            <Accordion.ItemContent>
-                                                                <Accordion.ItemBody>{item?.text?.map(x => x)}</Accordion.ItemBody>
-                                                            </Accordion.ItemContent>
-                                                        </Accordion.Item>
-                                                    ))}
-                                                </Accordion.Root>
+                                             hi
                                             </Drawer.Body>
                                             <Drawer.Footer dir="rtl">
                                                 <HStack w="full" h={12} bg="gray.900" px={4} rounded="lg">

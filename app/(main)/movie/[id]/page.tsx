@@ -8,9 +8,9 @@ import { useEffect, useState } from "react";
 import { MdBookmarkAdd, MdBookmarkAdded } from "react-icons/md";
 
 export default function Movie() {
-    const [movies, setMovies] = useState();
-    const [casts, setCasts] = useState();
-    const [similar, setSimilar] = useState();
+    const [movies, setMovies] = useState<any>();
+    const [casts, setCasts] = useState<any>();
+    const [similar, setSimilar] = useState<any>();
     const { id } = useParams()
     useEffect(() => {
         axios.get(`https://seeko.film/api/v1/ghost/get/movie/${id}`)

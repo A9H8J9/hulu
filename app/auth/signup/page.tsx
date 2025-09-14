@@ -22,11 +22,7 @@ export default function SignUp() {
             return res.data;
         },
         onError: (error) => {
-            console.log('err', error)
-            toaster.create({
-                type: 'error',
-                description: error.response.data.message,
-            })
+            console.log('error', error)
         },
         onSuccess: (data) => {
             console.log('Success:', data.data);
